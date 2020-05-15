@@ -1,0 +1,18 @@
+import random
+ans= [random.randint(0,9) for i in range(4)]
+
+def split(word): 
+    return [char for char in word] 
+
+while True:
+  guess= split(input("Enter a four digit number: "))
+  x=0
+  bull=0
+  for i in ans:
+    if i!=int(guess[x]):
+      bull+=1
+    x+=1
+  print(str(4-bull)+" cows "+str(bull)+" bulls")
+  if bull==0:
+    print("Game over.")
+    break
